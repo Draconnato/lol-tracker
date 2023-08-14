@@ -11,3 +11,11 @@ def getSummoner (token,playerName):
     response = requests.get(endPoint,headers={'X-Riot-Token':token})
 
     return json.loads(response.content.decode('utf8'))
+
+def getSummonerBySummonerId (token,summonerId):
+
+    endPoint = f'https://br1.api.riotgames.com/lol/summoner/v4/summoners/{summonerId}'
+
+    response = requests.get(endPoint,headers={'X-Riot-Token':token})
+
+    return json.loads(response.content.decode('utf8'))
